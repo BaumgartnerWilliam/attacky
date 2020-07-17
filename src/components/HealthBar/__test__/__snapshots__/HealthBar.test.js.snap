@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`health bar component matches snapshot when danger mode 1`] = `
+<div
+  class="w-50 progress"
+  data-testid="health-bar"
+  data-value="5"
+>
+  <div
+    aria-valuemax="100"
+    aria-valuemin="0"
+    aria-valuenow="5"
+    class="progress-bar bg-danger progress-bar-animated progress-bar-striped"
+    role="progressbar"
+    style="width: 5%;"
+  />
+</div>
+`;
+
+exports[`health bar component matches snapshot when not in danger mode 1`] = `
+<div
+  class="w-50 progress"
+  data-testid="health-bar"
+  data-value="99"
+>
+  <div
+    aria-valuemax="100"
+    aria-valuemin="0"
+    aria-valuenow="99"
+    class="progress-bar bg-success progress-bar-animated progress-bar-striped"
+    role="progressbar"
+    style="width: 99%;"
+  />
+</div>
+`;
