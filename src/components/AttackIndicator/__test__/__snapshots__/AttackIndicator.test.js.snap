@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`attack-indicator component matches snapshot 1`] = `
+<div
+  class="justify-content-center row"
+  data-testid="attacking"
+>
+  <div
+    class="spinner-grow spinner-grow-sm text-danger"
+  />
+</div>
+`;
