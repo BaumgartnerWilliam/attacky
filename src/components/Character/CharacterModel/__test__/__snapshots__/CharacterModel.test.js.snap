@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CharacterModel component matches snapshot 1`] = `
+<div
+  class="character-model row"
+  data-testid="model"
+>
+  <canvas
+    autoplay=""
+    src="monster_idle.png"
+    style="max-height: 200px;"
+  />
+  ;
+</div>
+`;

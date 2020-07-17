@@ -4,6 +4,7 @@ import { Col, Row, Container } from 'react-bootstrap';
 import Dice from '../Dice/Dice';
 import HealthBar from '../HealthBar/HealthBar';
 import AttackIndicator from '../AttackIndicator/AttackIndicator';
+import CharacterModel from './CharacterModel/CharacterModel';
 
 const Character = ({
   hp,
@@ -38,5 +39,7 @@ const Character = ({
     </Row>
   </Container>
 );
+
+Character.Model = CharacterModel;
 
 export default Character;

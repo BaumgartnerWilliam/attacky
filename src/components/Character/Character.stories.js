@@ -20,7 +20,7 @@ export const withHealthPoints = () => (
       alive={boolean('alive', false)}
       isAttacking={boolean('isAttacking', false)}
       isPlayer={boolean('isPlayer', false)}>
-      <p>model</p>
+      <Character.Model src={idleAsset} />
     </Character>
   </Container>
 );
@@ -36,7 +36,7 @@ export const withEnemy = () => (
         alive={boolean('alive', false)}
         isAttacking={boolean('isAttacking', false)}
         isPlayer={true}>
-        <p>model</p>
+        <Character.Model src={idleAsset} />
       </Character>
       <Character
         hp={number('hp', 70)}
@@ -46,7 +46,7 @@ export const withEnemy = () => (
         alive={boolean('alive', false)}
         isAttacking={boolean('isAttacking', false)}
         isPlayer={false}>
-        <p>model</p>
+        <Character.Model src={idleAsset} />
       </Character>
     </Row>
   </Container>
