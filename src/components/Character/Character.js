@@ -19,15 +19,13 @@ const Character = ({
     <Row>
       {!isPlayer && (
         <Col data-testid="enemy-dice">
-          <Dice value={dice1} data-testid="dice-1" />
-          <Dice value={dice2} data-testid="dice-2" />
+          <Dice value={dice1} />
+          <Dice value={dice2} />
         </Col>
       )}
       <Col>
-        {isAttacking && (
-          <AttackIndicator data-testid="attack-indicator" isPlayer={isPlayer} />
-        )}
-        <HealthBar data-testid="health-bar" value={hp} isDanger={lowHp} />
+        {isAttacking && <AttackIndicator isPlayer={isPlayer} />}
+        <HealthBar value={hp} isDanger={lowHp} />
         {children}
       </Col>
       {isPlayer && (

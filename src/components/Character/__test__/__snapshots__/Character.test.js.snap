@@ -1,0 +1,119 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`character component matches snapshot of ennemy attacking 1`] = `
+<div
+  class="character w-50 container"
+  data-testid="character"
+>
+  <div
+    class="row"
+  >
+    <div
+      class="col"
+      data-testid="enemy-dice"
+    >
+      <div
+        class="justify-content-center row"
+        data-testid="dice"
+      >
+        <div
+          data-testid="value"
+        />
+      </div>
+      <div
+        class="justify-content-center row"
+        data-testid="dice"
+      >
+        <div
+          data-testid="value"
+        />
+      </div>
+    </div>
+    <div
+      class="col"
+    >
+      <div
+        class="justify-content-center row"
+        data-testid="attacking"
+      >
+        <div
+          class="spinner-grow spinner-grow-sm text-danger"
+        />
+      </div>
+      <div
+        class="justify-content-center row"
+      >
+        <div
+          class="w-50 progress"
+          data-testid="health-bar"
+        >
+          <div
+            aria-valuemax="100"
+            aria-valuemin="0"
+            class="progress-bar bg-success progress-bar-animated progress-bar-striped"
+            role="progressbar"
+          />
+        </div>
+      </div>
+      <p>
+        children
+      </p>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`character component matches snapshot of player not attacking 1`] = `
+<div
+  class="character w-50 container"
+  data-testid="character"
+>
+  <div
+    class="row"
+  >
+    <div
+      class="col"
+    >
+      <div
+        class="justify-content-center row"
+      >
+        <div
+          class="w-50 progress"
+          data-testid="health-bar"
+        >
+          <div
+            aria-valuemax="100"
+            aria-valuemin="0"
+            class="progress-bar bg-success progress-bar-animated progress-bar-striped"
+            role="progressbar"
+          />
+        </div>
+      </div>
+      <p>
+        children
+      </p>
+    </div>
+    <div
+      class="col"
+      data-testid="player-dice"
+    >
+      <div
+        class="justify-content-center row"
+        data-testid="dice"
+      >
+        <div
+          data-testid="value"
+        />
+      </div>
+      <div
+        class="justify-content-center row"
+        data-testid="dice"
+      >
+        <div
+          data-testid="value"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
