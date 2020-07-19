@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 import CharacterModel from '../CharacterModel';
-import idleAsset from '../../../assets/monster_idle.png';
+import idleAsset from '../../../../assets/monster_idle.png';
 
 describe('CharacterModel component', () => {
   it('renders without crashing', () => {

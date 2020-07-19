@@ -1,1 +1,1 @@
-export { playerTurn } from './actions';
+export * as PLAYER from './player';

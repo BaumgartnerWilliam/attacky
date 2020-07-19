@@ -2,8 +2,10 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Container, Row, Button } from 'react-bootstrap';
 
-import { playerTurn } from '../../actions';
+import { PLAYER as PLAYER_ACTIONS } from '../../actions';
 import { Character } from '../../components';
+
+const { playerTurn } = PLAYER_ACTIONS;
 
 const Main = ({ enemy, player, playerTurn, onAttack }) => (
   <Container data-testid="main" className="mt-5">
@@ -36,7 +38,6 @@ const Main = ({ enemy, player, playerTurn, onAttack }) => (
 );
 
 const mapState = ({ todos }) => {
-  console.log(todos);
   return { todos };
 };
 
