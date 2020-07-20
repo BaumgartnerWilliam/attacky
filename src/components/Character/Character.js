@@ -8,8 +8,7 @@ import CharacterModel from './CharacterModel/CharacterModel';
 
 const Character = ({
   hp,
-  die1,
-  die2,
+  dice,
   lowHp,
   isPlayer,
   children,
@@ -19,8 +18,8 @@ const Character = ({
     <Row>
       {!isPlayer && (
         <Col data-testid="enemy-dice">
-          <Dice value={die1} />
-          <Dice value={die2} />
+          <Dice value={dice?.die1} />
+          <Dice value={dice?.die2} />
         </Col>
       )}
       <Col>
@@ -30,8 +29,8 @@ const Character = ({
       </Col>
       {isPlayer && (
         <Col data-testid="player-dice">
-          <Dice value={die1} />
-          <Dice value={die2} />
+          <Dice value={dice?.die1} />
+          <Dice value={dice?.die2} />
         </Col>
       )}
     </Row>

@@ -1,48 +1,57 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Container, Row, Button } from 'react-bootstrap';
+import { Container, Row, Button, Col } from 'react-bootstrap';
 
 import { PLAYER as PLAYER_ACTIONS } from '../../actions';
 import { Character } from '../../components';
 
-const { playerTurn } = PLAYER_ACTIONS;
+const { rollDice } = PLAYER_ACTIONS;
 
-const Main = ({ enemy, player, playerTurn, onAttack }) => (
+const Main = ({ enemy, player, onAttack, canAttack, result }) => (
   <Container data-testid="main" className="mt-5">
+    <Container>
+      <Row className="justify-content-center">
+        {result > 0 && `You did ${result} damage`}
+        {result < 0 && `You took ${Math.abs(result)} damage`}
+        {result === 0 && `Draw`}
+      </Row>
+    </Container>
     <Row>
       <Character
         hp={player?.hp}
-        dice1={player?.dice1}
-        dice2={player?.dice2}
+        dice={player?.dice}
         lowHp={player?.lowHp}
-        isAttacking={playerTurn}
+        isAttacking={player?.isAttacking}
         isPlayer={true}>
         <p>model</p>
       </Character>
       <Character
         hp={enemy?.hp}
-        dice1={enemy?.dice1}
-        dice2={enemy?.dice2}
+        dice={enemy?.dice}
         lowHp={enemy?.lowHp}
-        isAttacking={!playerTurn}>
+        isAttacking={enemy?.isAttacking}>
         <p>model</p>
       </Character>
     </Row>
     <Row className="justify-content-center">
-      <Button onClick={onAttack}>
-        {/* <Button onClick={onAttack} disabled={!playerTurn}> */}
+      <Button onClick={onAttack} disabled={!canAttack}>
         Attack me
       </Button>
     </Row>
   </Container>
 );
 
-const mapState = ({ todos }) => {
-  return { todos };
+const mapState = ({ player, enemy, game: { turnResult } }) => {
+  return {
+    player,
+    enemy,
+    result: turnResult,
+    canAttack: !player.isRollingDice && player.isAttacking
+  };
 };
 
 const mapDispatch = dispatch => ({
-  onAttack: () => dispatch(playerTurn())
+  onAttack: () => dispatch(rollDice())
 });
 
 export default connect(mapState, mapDispatch)(Main);

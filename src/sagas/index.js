@@ -1,14 +1,8 @@
 import { all } from 'redux-saga/effects';
+import gameSaga from './game';
+import playerSaga from './player';
+import enemy from './enemy';
 
-
-function* helloSaga() {
-  console.log('hello sagas');
+export default function* () {
+  yield all([gameSaga(), playerSaga(), enemy()]);
 }
-
-export default function* root() {
-  yield all([
-    helloSaga(),
-  ]);
-}
-
-

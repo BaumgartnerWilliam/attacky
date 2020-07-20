@@ -3,19 +3,18 @@ import { PLAYER, GAME, DICE, ENEMY } from '../constants';
 
 const {
   INITIAL_HIT_POINTS,
-  PLAYER_HIT,
-  PLAYER_LOW_HP,
-  PLAYER_TURN,
-  PLAYER_ROLLED_DICE,
-  PLAYER_ROLLING_DICE
-} = PLAYER;
-const { DICE_ROLLED } = DICE;
+  ENEMY_HIT,
+  ENEMY_LOW_HP,
+  ENEMY_TURN,
+  ENEMY_ROLLED_DICE,
+  ENEMY_ROLLING_DICE
+} = ENEMY;
 const { RESET_GAME } = GAME;
-const { ENEMY_TURN } = ENEMY;
+const { PLAYER_TURN } = PLAYER;
 
 export const hp = (state = INITIAL_HIT_POINTS, { value = 0, type }) => {
   switch (type) {
-    case PLAYER_HIT:
+    case ENEMY_HIT:
       const result = state - value;
       return result <= 0 ? 0 : result;
     case RESET_GAME:
@@ -27,7 +26,7 @@ export const hp = (state = INITIAL_HIT_POINTS, { value = 0, type }) => {
 
 export const lowHp = (state = false, { type }) => {
   switch (type) {
-    case PLAYER_LOW_HP:
+    case ENEMY_LOW_HP:
       return true;
     case RESET_GAME:
       return false;
@@ -41,7 +40,7 @@ export const dice = (state = { die1: 0, die2: 0 }, { type, values = [] }) => {
   const [die1 = 0, die2 = 0] = values || [];
 
   switch (type) {
-    case PLAYER_ROLLED_DICE:
+    case ENEMY_ROLLED_DICE:
       return {
         die1,
         die2
@@ -59,11 +58,11 @@ export const dice = (state = { die1: 0, die2: 0 }, { type, values = [] }) => {
 export const isAttacking = (state = false, { type }) => {
   switch (type) {
     case PLAYER_TURN:
-      return true;
-    case ENEMY_TURN:
       return false;
-    case RESET_GAME:
+    case ENEMY_TURN:
       return true;
+    case RESET_GAME:
+      return false;
     default:
       return state;
   }
@@ -71,9 +70,9 @@ export const isAttacking = (state = false, { type }) => {
 
 export const isRollingDice = (state = false, { type }) => {
   switch (type) {
-    case PLAYER_ROLLING_DICE:
+    case ENEMY_ROLLING_DICE:
       return true;
-    case PLAYER_ROLLED_DICE:
+    case ENEMY_ROLLED_DICE:
       return false;
     case RESET_GAME:
       return false;
