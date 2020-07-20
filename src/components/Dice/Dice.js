@@ -21,7 +21,12 @@ const dice = {
 
 const Dice = ({ value }) => (
   <Row data-testid="dice" className="justify-content-center pt-4">
-    <img src={dice[value]} style={{width: '70px'}} />
+    <img
+      data-value={value}
+      data-testid="value"
+      src={dice[value]}
+      style={{ width: '70px' }}
+    />
   </Row>
 );
 

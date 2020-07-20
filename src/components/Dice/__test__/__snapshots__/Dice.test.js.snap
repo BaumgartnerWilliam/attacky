@@ -2,14 +2,14 @@
 
 exports[`dice component matches snapshot 1`] = `
 <div
-  class="justify-content-center row"
+  class="justify-content-center pt-4 row"
   data-testid="dice"
 >
-  <div
+  <img
     data-testid="value"
     data-value="5"
-  >
-    5
-  </div>
+    src="dice5.png"
+    style="width: 70px;"
+  />
 </div>
 `;

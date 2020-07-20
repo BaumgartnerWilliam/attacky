@@ -13,19 +13,21 @@ exports[`character component matches snapshot of ennemy attacking 1`] = `
       data-testid="enemy-dice"
     >
       <div
-        class="justify-content-center row"
+        class="justify-content-center pt-4 row"
         data-testid="dice"
       >
-        <div
+        <img
           data-testid="value"
+          style="width: 70px;"
         />
       </div>
       <div
-        class="justify-content-center row"
+        class="justify-content-center pt-4 row"
         data-testid="dice"
       >
-        <div
+        <img
           data-testid="value"
+          style="width: 70px;"
         />
       </div>
     </div>
@@ -98,19 +100,21 @@ exports[`character component matches snapshot of player not attacking 1`] = `
       data-testid="player-dice"
     >
       <div
-        class="justify-content-center row"
+        class="justify-content-center pt-4 row"
         data-testid="dice"
       >
-        <div
+        <img
           data-testid="value"
+          style="width: 70px;"
         />
       </div>
       <div
-        class="justify-content-center row"
+        class="justify-content-center pt-4 row"
         data-testid="dice"
       >
-        <div
+        <img
           data-testid="value"
+          style="width: 70px;"
         />
       </div>
     </div>
