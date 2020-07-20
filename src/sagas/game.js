@@ -10,12 +10,12 @@ const { playerTurn, hitPlayer } = PLAYER;
 const { getDice } = SELECTORS;
 const { END_TURN, DEFAULT_ACTION_DELAY } = CONSTANTS;
 
-function* startGame() {
+export function* startGame() {
   yield put(resetGame());
   yield put(playerTurn());
 }
 
-function* manageTurns({ isPlayer }) {
+export function* manageTurns({ isPlayer } = {}) {
   if (isPlayer) {
     yield put(enemyTurn());
   } else {
@@ -25,7 +25,7 @@ function* manageTurns({ isPlayer }) {
     yield put(turnResult(result));
     if(result > 0) {
       yield put(hitEnemy(Math.abs(result)));
-    } else if (result == 0) {
+    } else if (result === 0) {
       yield put(draw());
     } else {
       yield put(hitPlayer(Math.abs(result)));

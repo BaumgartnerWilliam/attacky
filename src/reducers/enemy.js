@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux';
-import { PLAYER, GAME, DICE, ENEMY } from '../constants';
+import { PLAYER, GAME, ENEMY } from '../constants';
 
 const {
   INITIAL_HIT_POINTS,

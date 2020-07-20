@@ -4,7 +4,7 @@ import { GAME, ENEMY as ENEMY_ACTIONS } from '../constants';
 import { dice } from '../utils';
 
 const { diceRolled, rollDice, endTurn } = ENEMY;
-const { ENEMY_ROLLING_DICE, ENEMY_ROLLED_DICE, ENEMY_TURN } = ENEMY_ACTIONS;
+const { ENEMY_TURN } = ENEMY_ACTIONS;
 const { DEFAULT_ACTION_DELAY } = GAME;
 
 function* handleEnemyTurn() {

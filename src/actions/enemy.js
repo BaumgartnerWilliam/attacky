@@ -1,8 +1,7 @@
 import { endTurn as passTurn } from './game';
-import { ENEMY, GAME } from '../constants';
+import { ENEMY } from '../constants';
 
 const { ENEMY_TURN, ENEMY_HIT, ENEMY_ROLLING_DICE, ENEMY_ROLLED_DICE } = ENEMY;
-const { END_TURN } = GAME;
 
 export const enemyTurn = () => ({
   type: ENEMY_TURN

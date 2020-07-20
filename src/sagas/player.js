@@ -1,11 +1,7 @@
 import { all, put, delay, takeEvery, select } from 'redux-saga/effects';
 import { PLAYER } from '../actions';
 import { GAME as SELECTORS } from '../selectors';
-import {
-  GAME,
-  PLAYER as PLAYER_ACTIONS,
-  ENEMY as ENEMY_ACTIONS
-} from '../constants';
+import { GAME, PLAYER as PLAYER_ACTIONS } from '../constants';
 import { dice } from '../utils';
 
 const {
@@ -16,7 +12,6 @@ const {
 } = PLAYER_ACTIONS;
 const { diceRolled, endTurn, lowHp } = PLAYER;
 const { DEFAULT_ACTION_DELAY } = GAME;
-const { ENEMY_TURN } = ENEMY_ACTIONS;
 const { getPlayer } = SELECTORS;
 
 function* rollDice() {

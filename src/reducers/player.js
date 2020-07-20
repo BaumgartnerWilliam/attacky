@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux';
-import { PLAYER, GAME, DICE, ENEMY } from '../constants';
+import { PLAYER, GAME, ENEMY } from '../constants';
 
 const {
   INITIAL_HIT_POINTS,
@@ -9,7 +9,6 @@ const {
   PLAYER_ROLLED_DICE,
   PLAYER_ROLLING_DICE
 } = PLAYER;
-const { DICE_ROLLED } = DICE;
 const { RESET_GAME } = GAME;
 const { ENEMY_TURN } = ENEMY;
 

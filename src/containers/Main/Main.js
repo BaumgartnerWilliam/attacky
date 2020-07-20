@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Container, Row, Button, Col } from 'react-bootstrap';
+import { Container, Row, Button } from 'react-bootstrap';
 
 import { PLAYER as PLAYER_ACTIONS } from '../../actions';
 import { Character } from '../../components';

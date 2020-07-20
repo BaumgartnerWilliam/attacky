@@ -1,5 +1,5 @@
 import { endTurn as passTurn} from './game';
-import { PLAYER, GAME } from '../constants';
+import { PLAYER } from '../constants';
 
 const {
   PLAYER_TURN,
@@ -8,7 +8,6 @@ const {
   PLAYER_ROLLING_DICE,
   PLAYER_ROLLED_DICE
 } = PLAYER;
-const { END_TURN } = GAME;
 
 export const playerTurn = () => ({
   type: PLAYER_TURN
