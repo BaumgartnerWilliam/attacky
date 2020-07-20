@@ -2,6 +2,8 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Container, Row, Button } from 'react-bootstrap';
 
+import idleMonster from '../../assets/monster_idle.png';
+import idleKnight from '../../assets/knight_idle.gif';
 import { PLAYER as PLAYER_ACTIONS } from '../../actions';
 import { Character } from '../../components';
 
@@ -14,13 +16,13 @@ const Main = ({ enemy, player, onAttack, canAttack, game }) => (
         <Row className="justify-content-center">{`${game?.message}`}</Row>
       </Container>
     )}
-    {!game.gameOver && (
+    {!game?.gameOver && (
       <>
         <Container>
           <Row className="justify-content-center">
-            {game?.result > 0 && `You did ${game?.result} damage`}
-            {game?.result < 0 && `You took ${Math.abs(game?.result)} damage`}
-            {game?.result === 0 && `Draw`}
+            {game?.turnResult > 0 && `You did ${game?.turnResult} damage`}
+            {game?.turnResult < 0 && `You took ${Math.abs(game?.turnResult)} damage`}
+            {game?.turnResult === 0 && `Draw`}
           </Row>
         </Container>
         <Row>
@@ -30,14 +32,14 @@ const Main = ({ enemy, player, onAttack, canAttack, game }) => (
             lowHp={player?.lowHp}
             isAttacking={player?.isAttacking}
             isPlayer={true}>
-            <p>model</p>
+            <Character.Model src={idleKnight} />
           </Character>
           <Character
             hp={enemy?.hp}
             dice={enemy?.dice}
             lowHp={enemy?.lowHp}
             isAttacking={enemy?.isAttacking}>
-            <p>model</p>
+            <Character.Model src={idleMonster} />
           </Character>
         </Row>
         <Row className="justify-content-center">
