@@ -1,5 +1,3 @@
-jest.mock('../../utils/delay');
-
 import SagaTester from 'redux-saga-tester';
 
 import { delay } from '../../utils';
@@ -12,13 +10,14 @@ import {
 } from '../../constants';
 import { GAME, PLAYER, ENEMY } from '../../actions';
 
+jest.mock('../../utils/delay');
+
 const { END_TURN, GAME_OVER, DRAW_TURN, DEFAULT_ACTION_DELAY } = GAME_CONSTANTS;
 const { PLAYER_HIT, PLAYER_TURN } = PLAYER_CONSTANTS;
 const { ENEMY_HIT } = ENEMY_CONSTANTS;
-const { resetGame, turnResult, endTurn, gameOver } = GAME;
+const { resetGame, endTurn, gameOver } = GAME;
 const { playerTurn, hitPlayer, diceRolled: playerRollDice } = PLAYER;
 const { enemyTurn, hitEnemy, diceRolled: enemyRollDice } = ENEMY;
-
 
 delay.mockReturnValue(Promise.resolve());
 
@@ -83,7 +82,6 @@ describe('gamesaga', () => {
       sagaTester.dispatch(hitPlayer(100));
       sagaTester.dispatch(playerTurn());
 
-      const dispatched = sagaTester.getCalledActions();
       expect(sagaTester.numCalled(GAME_OVER)).toBe(1);
     });
   });

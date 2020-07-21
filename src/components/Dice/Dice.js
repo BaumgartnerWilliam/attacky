@@ -28,7 +28,8 @@ const Dice = ({ value, animate }) => (
       className={`${animate && 'dice-animating'}`}
       data-value={value}
       data-testid="value"
-      src={animate && diceAssets[0] || diceAssets[value]}
+      alt={`dice-value-${value}`}
+      src={(animate && diceAssets[0]) || diceAssets[value]}
       style={{ width: '70px' }}
     />
   </Row>

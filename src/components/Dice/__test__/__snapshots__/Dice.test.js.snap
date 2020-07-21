@@ -6,6 +6,7 @@ exports[`dice component matches snapshot 1`] = `
   data-testid="dice"
 >
   <img
+    alt="dice-value-5"
     class="undefined"
     data-testid="value"
     data-value="5"
