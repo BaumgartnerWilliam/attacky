@@ -10,12 +10,16 @@ export default {
   decorators: [withKnobs]
 };
 
+const dice = {
+  die1: number('die1', 1),
+  die2: number('die2', 2)
+};
+
 export const withHealthPoints = () => (
   <Container>
     <Character
       hp={number('hp', 70)}
-      die1={number('die1', 1)}
-      die2={number('die2', 2)}
+      dice={dice}
       lowHp={boolean('lowHp', false)}
       alive={boolean('alive', false)}
       isAttacking={boolean('isAttacking', false)}
@@ -30,8 +34,7 @@ export const withEnemy = () => (
     <Row>
       <Character
         hp={number('hp', 70)}
-        die1={number('die1', 1)}
-        die2={number('die2', 2)}
+        dice={dice}
         lowHp={boolean('lowHp', false)}
         alive={boolean('alive', false)}
         isAttacking={boolean('isAttacking', false)}
@@ -40,8 +43,7 @@ export const withEnemy = () => (
       </Character>
       <Character
         hp={number('hp', 70)}
-        die1={number('die1', 1)}
-        die2={number('die2', 2)}
+        dice={dice}
         lowHp={boolean('lowHp', false)}
         alive={boolean('alive', false)}
         isAttacking={boolean('isAttacking', false)}
