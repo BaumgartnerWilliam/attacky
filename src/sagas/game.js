@@ -1,6 +1,6 @@
-import { all, put, select, takeEvery, delay } from 'redux-saga/effects';
+import { all, put, select, takeEvery, call } from 'redux-saga/effects';
 import { GAME, ENEMY, PLAYER } from '../actions/';
-import { dice } from '../utils/';
+import { dice, delay } from '../utils/';
 import { GAME as CONSTANTS, PLAYER as PLAYER_CONSTANTS } from '../constants/';
 import { GAME as SELECTORS } from '../selectors/';
 
@@ -32,7 +32,7 @@ export function* manageTurns({ isPlayer } = {}) {
       yield put(hitPlayer(Math.abs(result)));
     }
 
-    yield delay(DEFAULT_ACTION_DELAY);
+    yield call(delay, DEFAULT_ACTION_DELAY);
     yield put(playerTurn());
   }
 }
