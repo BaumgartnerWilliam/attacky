@@ -31,6 +31,7 @@ const Main = ({ enemy, player, onAttack, canAttack, game }) => (
             dice={player?.dice}
             lowHp={player?.lowHp}
             isAttacking={player?.isAttacking}
+            isRollingDice={player?.isRollingDice}
             isPlayer={true}>
             <Character.Model src={idleKnight} />
           </Character>
@@ -38,6 +39,7 @@ const Main = ({ enemy, player, onAttack, canAttack, game }) => (
             hp={enemy?.hp}
             dice={enemy?.dice}
             lowHp={enemy?.lowHp}
+            isRollingDice={enemy?.isRollingDice}
             isAttacking={enemy?.isAttacking}>
             <Character.Model src={idleMonster} />
           </Character>

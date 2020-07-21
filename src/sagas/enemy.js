@@ -11,8 +11,8 @@ function* handleEnemyTurn() {
   yield delay(DEFAULT_ACTION_DELAY);
   yield put(rollDice());
   const diceValues = [dice.getRandomRoll(), dice.getRandomRoll()];
-  yield put(diceRolled(diceValues));
   yield delay(DEFAULT_ACTION_DELAY);
+  yield put(diceRolled(diceValues));
   yield put(endTurn());
 }
 

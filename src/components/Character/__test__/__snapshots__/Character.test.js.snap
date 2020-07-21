@@ -6,31 +6,8 @@ exports[`character component matches snapshot of ennemy attacking 1`] = `
   data-testid="character"
 >
   <div
-    class="row"
+    class="flex-row-reverse row"
   >
-    <div
-      class="col"
-      data-testid="enemy-dice"
-    >
-      <div
-        class="justify-content-center pt-4 row"
-        data-testid="dice"
-      >
-        <img
-          data-testid="value"
-          style="width: 70px;"
-        />
-      </div>
-      <div
-        class="justify-content-center pt-4 row"
-        data-testid="dice"
-      >
-        <img
-          data-testid="value"
-          style="width: 70px;"
-        />
-      </div>
-    </div>
     <div
       class="col"
     >
@@ -61,6 +38,31 @@ exports[`character component matches snapshot of ennemy attacking 1`] = `
         children
       </p>
     </div>
+    <div
+      class="col"
+      data-testid="dice"
+    >
+      <div
+        class="justify-content-center pt-4 row"
+        data-testid="dice"
+      >
+        <img
+          class="undefined"
+          data-testid="value"
+          style="width: 70px;"
+        />
+      </div>
+      <div
+        class="justify-content-center pt-4 row"
+        data-testid="dice"
+      >
+        <img
+          class="undefined"
+          data-testid="value"
+          style="width: 70px;"
+        />
+      </div>
+    </div>
   </div>
 </div>
 `;
@@ -71,7 +73,7 @@ exports[`character component matches snapshot of player not attacking 1`] = `
   data-testid="character"
 >
   <div
-    class="row"
+    class="false row"
   >
     <div
       class="col"
@@ -97,13 +99,14 @@ exports[`character component matches snapshot of player not attacking 1`] = `
     </div>
     <div
       class="col"
-      data-testid="player-dice"
+      data-testid="dice"
     >
       <div
         class="justify-content-center pt-4 row"
         data-testid="dice"
       >
         <img
+          class="undefined"
           data-testid="value"
           style="width: 70px;"
         />
@@ -113,6 +116,7 @@ exports[`character component matches snapshot of player not attacking 1`] = `
         data-testid="dice"
       >
         <img
+          class="undefined"
           data-testid="value"
           style="width: 70px;"
         />

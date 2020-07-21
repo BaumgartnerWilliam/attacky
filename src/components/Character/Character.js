@@ -6,33 +6,18 @@ import HealthBar from '../HealthBar/HealthBar';
 import AttackIndicator from '../AttackIndicator/AttackIndicator';
 import CharacterModel from './CharacterModel/CharacterModel';
 
-const Character = ({
-  hp,
-  dice,
-  lowHp,
-  isPlayer,
-  children,
-  isAttacking
-}) => (
+const Character = ({ hp, dice, isRollingDice, lowHp, isPlayer, children, isAttacking }) => (
   <Container data-testid="character" className="character w-50">
-    <Row>
-      {!isPlayer && (
-        <Col data-testid="enemy-dice">
-          <Dice value={dice?.die1} />
-          <Dice value={dice?.die2} />
-        </Col>
-      )}
+    <Row className={`${!isPlayer && 'flex-row-reverse'}`}>
       <Col>
         {isAttacking && <AttackIndicator isPlayer={isPlayer} />}
         <HealthBar value={hp} isDanger={lowHp} />
         {children}
       </Col>
-      {isPlayer && (
-        <Col data-testid="player-dice">
-          <Dice value={dice?.die1} />
-          <Dice value={dice?.die2} />
-        </Col>
-      )}
+      <Col data-testid="dice">
+        <Dice value={dice?.die1} animate={isRollingDice} />
+        <Dice value={dice?.die2} animate={isRollingDice} />
+      </Col>
     </Row>
   </Container>
 );

@@ -23,18 +23,6 @@ describe('character component', () => {
     expect(getByTestId(testid)).toBeInTheDocument();
   });
 
-  it('shows the the enemies dice', () => {
-    const { getByTestId } = render(<Character />);
-    const testid = 'enemy-dice';
-    expect(getByTestId(testid)).toBeInTheDocument();
-  });
-
-  it('shows the the players dice', () => {
-    const { getByTestId } = render(<Character isPlayer={true} />);
-    const testid = 'player-dice';
-    expect(getByTestId(testid)).toBeInTheDocument();
-  });
-
   it('renders children', () => {
     const { getByTestId } = render(
       <Character>
